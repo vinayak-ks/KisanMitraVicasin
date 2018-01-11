@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneAuthActivity"
+    android:orientation="vertical"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="50dp"
+    android:background="@color/colorPrimaryDark"
+
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Kisan"
+        android:textColor="#fff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_marginTop="25dp"/>
+<!--
+<LinearLayout
+    android:layout_marginTop="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+    <Button
+        android:layout_margin="10dp"
+        android:background="@drawable/buttonstylepink"
+        android:layout_width="wrap_content"
+        android:layout_height="113dp"
+        android:textColor="#fff"
+        android:text="learn more"/>
+
+</LinearLayout>
+-->
+
+</LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:id="@+id/field_phone_number"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_phone_number"
+
+            android:inputType="phone"/>
+
+        <EditText
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
+            android:id="@+id/field_verification_code"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_verification_code"
+
+            android:inputType="number"/>
+
+        <Button
+            android:layout_marginTop="40dp"
+            android:text="Login"
+            android:textColor="#fff"
+            android:id="@+id/button_start_verification"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonstylepink"/>
+    </LinearLayout>
+
+</LinearLayout>
