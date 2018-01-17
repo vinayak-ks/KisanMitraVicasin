@@ -90,6 +90,9 @@ public class HomeScreenActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             startActivity(new Intent(this,AadharCardAcivity.class));
         }
+        if (id == R.id.nav_phone) {
+            startActivity(new Intent(this,PhoneAuthActivity.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -6,6 +6,10 @@
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
             android:title="Register" />
+        <item
+            android:id="@+id/nav_phone"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="phone" />
     </group>
 
 </menu>

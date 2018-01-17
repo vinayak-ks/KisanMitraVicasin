@@ -67,15 +67,6 @@
 
             android:inputType="phone"/>
 
-        <EditText
-            android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/ic_lock_black_24dp"
-            android:id="@+id/field_verification_code"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_verification_code"
-
-            android:inputType="number"/>
 
         <Button
             android:layout_marginTop="40dp"
