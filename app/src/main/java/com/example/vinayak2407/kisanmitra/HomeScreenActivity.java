@@ -16,9 +16,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.vinayak2407.kisanmitra.registration.AadharCardAcivity;
+import com.example.vinayak2407.kisanmitra.registration.PhoneAuthActivity;
+import com.example.vinayak2407.kisanmitra.registration.StartActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static SharedPreferences aaddharDetails;
+
+    private FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +56,12 @@ public class HomeScreenActivity extends AppCompatActivity
         aaddharDetails=this.getSharedPreferences("com.example.vinayak2407.kisanmitra", Context.MODE_PRIVATE);
 
 
+
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -74,7 +88,10 @@ public class HomeScreenActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(HomeScreenActivity.this,StartActivity.class));
+            finish();
             return true;
         }
 

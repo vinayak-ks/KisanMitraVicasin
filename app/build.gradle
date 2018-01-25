@@ -41,8 +41,12 @@ dependencies {
     compile 'com.flipboard:bottomsheet-core:1.5.3'
     compile 'com.flipboard:bottomsheet-commons:1.5.3' // optional
     compile 'com.github.dakatso:livebutton:1.0.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'     //one
+    compile 'com.squareup.picasso:picasso:2.5.2'    //two
+    compile 'com.nineoldandroids:library:2.4.0'     //three
 
 }
+
 
 
 

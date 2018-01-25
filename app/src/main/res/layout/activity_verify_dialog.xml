@@ -20,29 +20,58 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/field_verification_code2"
+                android:id="@+id/field_verification_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+
                 android:layout_marginStart="20dp"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawablePadding="10dp"
                 android:hint="@string/hint_verification_code"
                 android:inputType="number" />
 
-            <Button
-                android:id="@+id/button_verify"
+            <TextView
+                android:id="@+id/mTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/buttonstylepink"
-                android:text="Verify"
-                android:textColor="#fff" />
+                android:text="45:00"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_verify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/buttonstylepink"
+                    android:text="Verify"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/button_resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/buttonstylepink"
+                    android:text="Resend"
+                    android:textColor="#fff"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

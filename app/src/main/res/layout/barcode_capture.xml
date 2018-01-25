@@ -4,9 +4,10 @@
     android:id="@+id/topLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:layout_margin="1dp"
+    android:background="@android:color/white"
     android:fitsSystemWindows="true"
-    android:background="@color/backDark">
+    android:orientation="horizontal">
 
   <com.example.vinayak2407.kisanmitra.camera.CameraSourcePreview
       android:id="@+id/preview"

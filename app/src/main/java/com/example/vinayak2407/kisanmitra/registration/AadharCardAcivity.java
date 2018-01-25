@@ -1,4 +1,4 @@
-package com.example.vinayak2407.kisanmitra;
+package com.example.vinayak2407.kisanmitra.registration;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -9,14 +9,18 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vinayak2407.kisanmitra.HomeScreenActivity;
+import com.example.vinayak2407.kisanmitra.R;
 import com.example.vinayak2407.kisanmitra.barcode.BarcodeCaptureActivity;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,7 +51,8 @@ public class AadharCardAcivity extends AppCompatActivity {
     private DatabaseReference mUserData;
     private ProgressDialog pd;
     private Button but;
-
+    private LinearLayout mainLayout;
+    private NestedScrollView mainLayout1;
     private static final int RC_BARCODE_CAPTURE = 9001;
     private static final String TAG = "BarcodeMain";
 
@@ -56,6 +61,10 @@ public class AadharCardAcivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aadhar_card_acivity);
+        mainLayout=(LinearLayout)findViewById(R.id.backLayout);
+        mainLayout1=(NestedScrollView) findViewById(R.id.nestedLayout);
+        mainLayout1.setAlpha(1);
+        mainLayout.setAlpha(0);
         flag=false;
         HomeScreenActivity.aaddharDetails=this.getSharedPreferences("com.example.vinayak2407.kisanmitra", Context.MODE_PRIVATE);
         HomeScreenActivity.aaddharDetails.edit().putString("xmlString","null").apply();
@@ -76,6 +85,9 @@ public class AadharCardAcivity extends AppCompatActivity {
     public void onClick(View v) {
         if (v.getId() == R.id.read_barcode) {
             v.setVisibility(View.INVISIBLE);
+            mainLayout.setAlpha(1);
+            mainLayout1.setAlpha(0);
+            getSupportActionBar().hide();
             // launch barcode activity.
             Intent intent = new Intent(getApplicationContext(), BarcodeCaptureActivity.class);
             intent.putExtra(BarcodeCaptureActivity.AutoFocus, true);
@@ -102,6 +114,11 @@ public class AadharCardAcivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RC_BARCODE_CAPTURE) {
+            Button b=(Button)findViewById(R.id.read_barcode);
+            b.setVisibility(View.VISIBLE);
+            getSupportActionBar().show();
+            mainLayout.setAlpha(0);
+            mainLayout1.setAlpha(1);
             HomeScreenActivity.aaddharDetails.edit().putString("xmlString","null").apply();
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {

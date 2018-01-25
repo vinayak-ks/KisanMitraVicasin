@@ -20,18 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhoneAuthActivity" />
+        <activity android:name=".registration.PhoneAuthActivity" />
         <activity
             android:name=".HomeScreenActivity"
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SoilResultsActivity" />
-        <activity android:name=".AadharCardAcivity" />
+        <activity android:name=".registration.AadharCardAcivity" />
         <activity
             android:name=".barcode.BarcodeCaptureActivity"
             android:label="Qr code"
             android:theme="@style/qr_code_theme.CustomTheme" />
-        <activity android:name=".AadharDetails"></activity>
+        <activity android:name=".registration.StartActivity"/>
     </application>
 
 </manifest>

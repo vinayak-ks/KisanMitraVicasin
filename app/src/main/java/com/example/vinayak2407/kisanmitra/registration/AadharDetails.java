@@ -1,4 +1,4 @@
-package com.example.vinayak2407.kisanmitra;
+package com.example.vinayak2407.kisanmitra.registration;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vinayak2407.kisanmitra.HomeScreenActivity;
+import com.example.vinayak2407.kisanmitra.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;

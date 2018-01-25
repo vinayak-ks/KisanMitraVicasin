@@ -90,7 +90,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         setContentView(R.layout.barcode_capture);
         DisplayMetrics dm=new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        getWindow().setLayout((int)(dm.widthPixels*0.4),(int)(dm.heightPixels*0.4));
+        getWindow().setLayout((int)(dm.widthPixels*0.535),(int)(dm.heightPixels*0.4));
 
 
 
@@ -434,6 +434,18 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
 
     @Override
     public void onBarcodeDetected(Barcode barcode) {
+        if(!(barcode.displayValue.contains("uid") && barcode.displayValue.contains("name") && barcode.displayValue.contains("pc")
+                && barcode.displayValue.contains("gender") && barcode.displayValue.contains("state")
+                && barcode.displayValue.contains("dob") && barcode.displayValue.contains("street")
+                && barcode.displayValue.contains("loc") && barcode.displayValue.contains("house")
+                && barcode.displayValue.contains("co") && barcode.displayValue.contains("yob")
+                && barcode.displayValue.contains("po") && barcode.displayValue.contains("dist")))
+        {
+            Snackbar.make(findViewById(R.id.barcode_value),"Please scan a valid aadhar card...",Snackbar.LENGTH_LONG)
+                    .setAction("Action",null).show();
+            //Toast.makeText(getApplicationContext(),"Please scan a valid aadhar card...",Toast.LENGTH_LONG).show();
+            return;
+        }
         //do something with barcode data returned
         Intent data = new Intent();
         data.putExtra(BarcodeObject, barcode);
