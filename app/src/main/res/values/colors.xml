@@ -6,4 +6,6 @@
     <color name="grey_100">#F5F5F5</color>
     <color name="grey_300">#E0E0E0</color>
     <color name="pink">#b4004e</color>
+    <color name="backDark">#0e160e</color>
+    <color name="startBack">#047f5e</color>
 </resources>

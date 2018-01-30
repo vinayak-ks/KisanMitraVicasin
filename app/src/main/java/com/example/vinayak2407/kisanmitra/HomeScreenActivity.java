@@ -1,5 +1,8 @@
 package com.example.vinayak2407.kisanmitra;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +16,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.vinayak2407.kisanmitra.registration.AadharCardAcivity;
+import com.example.vinayak2407.kisanmitra.registration.PhoneAuthActivity;
+import com.example.vinayak2407.kisanmitra.registration.StartActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static SharedPreferences aaddharDetails;
+
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,16 @@ public class HomeScreenActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        aaddharDetails=this.getSharedPreferences("com.example.vinayak2407.kisanmitra", Context.MODE_PRIVATE);
+
+
+
+
+
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -67,7 +88,10 @@ public class HomeScreenActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(HomeScreenActivity.this,StartActivity.class));
+            finish();
             return true;
         }
 
@@ -81,17 +105,10 @@ public class HomeScreenActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            startActivity(new Intent(this,AadharCardAcivity.class));
+        }
+        if (id == R.id.nav_phone) {
+            startActivity(new Intent(this,PhoneAuthActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
